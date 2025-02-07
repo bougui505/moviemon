@@ -295,7 +295,7 @@ def scan_dir(path, dir_json):
 def get_movie_info(name):
     """Find movie information"""
     movie_info = guessit(name)
-    if movie_info['type'] == "movie":
+    if movie_info['type'] == "movie" and 'title' in movie_info:
         if 'year' in movie_info:
             return omdb(movie_info['title'], movie_info['year'])
         else:
